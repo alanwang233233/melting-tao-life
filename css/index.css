@@ -28,10 +28,12 @@
   }
 }
 .box .box-back-img {
-  width: 100%;
+  width: 10rem;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  margin: auto;
   z-index: -1;
   box-sizing: border-box;
   overflow: hidden;
@@ -101,21 +103,21 @@
   position: absolute;
   top: 0.06666667rem;
 }
+.box .box-back-img > div > div:nth-of-type(1) {
+  animation-duration: 4s !important;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: move_wave_left !important;
+  animation-name: move_wave_left !important;
+}
+.box .box-back-img > div > div:nth-of-type(2) {
+  animation-duration: 4s !important;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: move_wave_right !important;
+  animation-name: move_wave_right !important;
+}
 .box .box-back-img > div > div > div {
   width: 100%;
   position: relative;
-}
-.box .box-back-img > div > div > div:nth-of-type(1) {
-  animation-duration: 4s !important;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: move_wave !important;
-  animation-name: move_wave !important;
-}
-.box .box-back-img > div > div > div:nth-of-type(2) {
-  animation-duration: 4s !important;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: move_wave !important;
-  animation-name: move_wave !important;
 }
 .box .box-back-img > div > div > div i {
   position: absolute;
@@ -133,17 +135,31 @@
   display: block;
   width: 100%;
 }
-@keyframes move_wave {
+@keyframes move_wave_left {
   0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
+    transform: translateX(0) translateZ(0) scaleY(1) rotate(0deg);
     transform-origin: 50% 0;
   }
   50% {
-    transform: translateX(0%) translateZ(0) scaleY(0.9);
+    transform: translateX(0%) translateZ(0) scaleY(0.9) rotate(-8deg);
     transform-origin: 50% 0;
   }
   100% {
-    transform: translateX(0%) translateZ(0) scaleY(1);
+    transform: translateX(0%) translateZ(0) scaleY(1) rotate(0deg);
+    transform-origin: 50% 0;
+  }
+}
+@keyframes move_wave_right {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1) rotate(0deg);
+    transform-origin: 50% 0;
+  }
+  50% {
+    transform: translateX(0%) translateZ(0) scaleY(0.9) rotate(8deg);
+    transform-origin: 50% 0;
+  }
+  100% {
+    transform: translateX(0%) translateZ(0) scaleY(1) rotate(0deg);
     transform-origin: 50% 0;
   }
 }
@@ -155,9 +171,11 @@
 }
 .box .box-back {
   width: 100%;
+  overflow: hidden;
 }
 .box .box-back.fu {
   margin-top: 4.25333333rem;
+  overflow: visible;
 }
 .box .box-back.fu a {
   position: absolute;
@@ -185,6 +203,45 @@
   -webkit-animation-duration: 3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.fu a:nth-of-type(3) {
+  top: 6.66666667rem;
+  left: -0.33333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.fu a:nth-of-type(4) {
+  bottom: 0.13333333rem;
+  left: 3.33333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.fu a:nth-of-type(5) {
+  bottom: 2rem;
+  right: 0.06666667rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-fill-mode: none;
 }
@@ -225,9 +282,118 @@
     transform: scale(1);
   }
 }
+.box .box-back.yushu .box-back-fu-item {
+  border: 1px solid ;
+  position: absolute;
+  top: 2.13333333rem;
+  left: 0.66666667rem;
+  width: 8.66666667rem;
+  z-index: 1;
+  opacity: 0;
+}
+.box .box-back.yushu a {
+  position: absolute;
+}
+.box .box-back.yushu a:nth-of-type(1) {
+  bottom: 4rem;
+  right: -0.33333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.hesui a {
+  position: absolute;
+}
+.box .box-back.hesui a:nth-of-type(1) {
+  top: 1.06666667rem;
+  left: -0.33333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.hesui a:nth-of-type(2) {
+  bottom: 5.33333333rem;
+  right: -0.33333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
 .box .box-back.shu p {
   width: 3.73333333rem;
   bottom: 4rem;
+}
+.box .box-back.shu a {
+  position: absolute;
+}
+.box .box-back.shu a:nth-of-type(1) {
+  top: 4rem;
+  left: -0.06666667rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.shu a:nth-of-type(2) {
+  bottom: 2rem;
+  left: 2rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.shu a:nth-of-type(3) {
+  bottom: 1.06666667rem;
+  right: 2rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.shu a:nth-of-type(4) {
+  bottom: 5.33333333rem;
+  right: -0.13333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
 }
 .box .box-back > div {
   margin-top: -0.02666667rem;
@@ -261,16 +427,13 @@
 .box .box-see-max {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
   width: 10rem;
-  background: rgba(0, 0, 0, 0);
-  z-index: 11;
-}
-.box .box-see-max.active {
   background: rgba(0, 0, 0, 0.8);
-  transition: all .2s;
+  z-index: 11;
 }
 .box .box-see-max.active i {
   width: 90%;
@@ -278,7 +441,7 @@
 }
 .box .box-see-max i {
   display: block;
-  width: 20%;
+  width: 0%;
   position: absolute;
   left: 50%;
   top: 50%;
