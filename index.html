@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>读品经典 传承文明 融筑美好生活</title>
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./js/flexible.js"></script>
+  <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+  <div class="box" id="box">
+    <!-- 头部 -->
+    <div class="box-top"><img src="./image/top.png" alt=""></div>
+    <!-- banner -->
+    <div class="box-back-img">
+      <div>
+        <img src="./image/back_03_01.jpg" alt="">
+        <span><img src="./image/hudie.png" alt=""></span>
+        <a href="javascript:;"><img src="./image/yanhua.png" alt=""></a>
+        <div class="box-dui-img-life">
+          <div>
+            <b><img src="./image/dui_left.png" alt=""></b>
+            <i><img src="./image/touying_left.png" alt=""></i>
+          </div>
+        </div>
+        <div class="box-dui-img-right">
+          <div>
+            <b><img src="./image/dui_right.png" alt=""></b>
+            <i><img src="./image/touying_right.png" alt=""></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 楹联送福 -->
+    <div class="box-back fu" id="box-back-fu">
+      <div>
+        <a href="javascript:;"><img src="./image/yanhua.png" alt=""></a>
+        <a href="javascript:;"><img src="./image/yanhua.png" alt=""></a>
+        <img src="./image/back_03_02.jpg" alt="">
+        <i class="box-back-fu-item"><img src="./image/4.png" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/3.png" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/2.png" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/1.png" alt=""></i>
+        <p><img src="./image/see_loading.png" alt=""></p>
+      </div>
+    </div>
+    <!-- 玉兔献瑞 -->
+    <div class="box-back">
+      <div>
+        <img src="./image/back_03_03.jpg" alt="">
+        <p><img src="./image/see_loading.png" alt=""></p>
+      </div>
+    </div class="box-back">
+    <!-- 慕课贺岁 -->
+    <div class="box-back">
+      <div>
+        <img src="./image/back_03_04.jpg" alt="">
+        <p><img src="./image/see_loading.png" alt=""></p>
+      </div>
+    </div>
+    <!-- 书香暖春 -->
+    <div class="box-back shu">
+      <div>
+        <img src="./image/back_03_05.jpg" alt="">
+        <p><img src="./image/click_tic.png" alt=""></p>
+      </div>
+    </div>
+    <!-- 查看大图 -->
+    <!-- <div class="box-see-max" id="box-see-max" onclick="seeMax()">
+      <i><img src="./image/4.png" alt=""></i>
+    </div> -->
+  </div>
+</body>
+</html>
+<script>
+  var mo=function(e){e.preventDefault();};
+  /***滑动限制***/
+  function stop(){
+      document.body.style.overflow='hidden';
+      document.addEventListener("touchmove",mo,{passive:false});//禁止页面滑动
+  }
+  /***取消滑动限制***/
+  function move(){
+      document.body.style.overflow='';//出现滚动条
+      document.removeEventListener("touchmove",mo,{passive:false});
+  }
+  function seeMax() {
+    $('#box-see-max').remove();
+    move();
+  }
+  window.onload = function() {
+    $('#box-back-fu').on('click', '.box-back-fu-item', function() {
+      stop();
+      var url = $(this).children('img').attr('src');
+      $('#box-see-max').remove();
+      $('#box').append(`
+        <div class="box-see-max" id="box-see-max" onclick="seeMax()">
+          <i><img src="${url}" alt=""></i>
+        </div>
+      `)
+      setTimeout(function() {
+        $('#box-see-max').addClass('active')
+      })
+    })
+  }
+</script>

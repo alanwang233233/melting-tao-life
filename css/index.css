@@ -1,0 +1,290 @@
+@charset "UTF-8";
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+.box {
+  width: 10rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.box .box-top {
+  width: 100%;
+}
+.box .box-top img {
+  display: block;
+  width: 100%;
+}
+@keyframes move_yanhua {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.box .box-back-img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.box .box-back-img > div {
+  position: relative;
+  width: 100%;
+}
+.box .box-back-img > div > img {
+  display: block;
+  width: 100%;
+}
+.box .box-back-img > div > span {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.46666667rem;
+  width: 3.33333333rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_hudie;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back-img > div > span img {
+  display: block;
+  width: 100%;
+}
+@keyframes move_hudie {
+  0% {
+    transform: translateY(0);
+    transform-origin: 50% 0;
+  }
+  50% {
+    transform: translateY(-0.66666667rem);
+    transform-origin: 50% 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    transform-origin: 50% 0;
+  }
+}
+.box .box-back-img > div > a {
+  position: absolute;
+}
+.box .box-back-img > div > a:nth-of-type(1) {
+  top: 0.86666667rem;
+  left: 3.33333333rem;
+  width: 0.4rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back-img > div > a img {
+  display: block;
+  width: 100%;
+}
+.box .box-back-img > div > div {
+  width: 1.6rem;
+  position: absolute;
+  top: 0.06666667rem;
+}
+.box .box-back-img > div > div > div {
+  width: 100%;
+  position: relative;
+}
+.box .box-back-img > div > div > div:nth-of-type(1) {
+  animation-duration: 4s !important;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: move_wave !important;
+  animation-name: move_wave !important;
+}
+.box .box-back-img > div > div > div:nth-of-type(2) {
+  animation-duration: 4s !important;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: move_wave !important;
+  animation-name: move_wave !important;
+}
+.box .box-back-img > div > div > div i {
+  position: absolute;
+  top: 0.93333333rem;
+  left: 0;
+  z-index: 1;
+}
+.box .box-back-img > div > div > div b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.box .box-back-img > div > div > div img {
+  display: block;
+  width: 100%;
+}
+@keyframes move_wave {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+    transform-origin: 50% 0;
+  }
+  50% {
+    transform: translateX(0%) translateZ(0) scaleY(0.9);
+    transform-origin: 50% 0;
+  }
+  100% {
+    transform: translateX(0%) translateZ(0) scaleY(1);
+    transform-origin: 50% 0;
+  }
+}
+.box .box-back-img > div .box-dui-img-life {
+  left: -0.13333333rem;
+}
+.box .box-back-img > div .box-dui-img-right {
+  right: -0.13333333rem;
+}
+.box .box-back {
+  width: 100%;
+}
+.box .box-back.fu {
+  margin-top: 4.25333333rem;
+}
+.box .box-back.fu a {
+  position: absolute;
+}
+.box .box-back.fu a:nth-of-type(1) {
+  top: -0.46666667rem;
+  left: 2.13333333rem;
+  width: 0.66666667rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.fu a:nth-of-type(2) {
+  top: 0.26666667rem;
+  right: 2.13333333rem;
+  width: 0.4rem;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_yanhua;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back.fu i {
+  position: absolute;
+  width: 3.06666667rem;
+  z-index: 1;
+}
+.box .box-back.fu i img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+}
+.box .box-back.fu i:nth-of-type(1) {
+  top: 2.4rem;
+  left: 1.4rem;
+}
+.box .box-back.fu i:nth-of-type(2) {
+  top: 2.4rem;
+  right: 1.4rem;
+}
+.box .box-back.fu i:nth-of-type(3) {
+  bottom: 2.13333333rem;
+  left: 1.4rem;
+}
+.box .box-back.fu i:nth-of-type(4) {
+  bottom: 2.13333333rem;
+  right: 1.4rem;
+}
+@keyframes move_button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.box .box-back.shu p {
+  width: 3.73333333rem;
+  bottom: 4rem;
+}
+.box .box-back > div {
+  margin-top: -0.02666667rem;
+  width: 100%;
+  position: relative;
+}
+.box .box-back > div img {
+  display: block;
+  width: 100%;
+}
+.box .box-back > div p {
+  width: 2.4rem;
+  position: absolute;
+  bottom: 0.8rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -webkit-animation-name: move_button;
+  -webkit-animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: none;
+}
+.box .box-back > div p img {
+  display: block;
+  width: 100%;
+}
+.box .box-see-max {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10rem;
+  background: rgba(0, 0, 0, 0);
+  z-index: 11;
+}
+.box .box-see-max.active {
+  background: rgba(0, 0, 0, 0.8);
+  transition: all .2s;
+}
+.box .box-see-max.active i {
+  width: 90%;
+  transition: all .5s;
+}
+.box .box-see-max i {
+  display: block;
+  width: 20%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.box .box-see-max i img {
+  display: block;
+  width: 100%;
+}

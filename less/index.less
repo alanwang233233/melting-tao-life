@@ -1,0 +1,298 @@
+@charset "UTF-8";
+@import "./mixin.less";
+.box {
+  width: 750rem/@size;
+  margin: 0 auto;
+  box-sizing: border-box;
+  .box-top {
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+    }
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // z-index: 10;
+  }
+  @keyframes move_yanhua {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+  .box-back-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    box-sizing: border-box;
+    overflow: hidden;
+    &>div {
+      position: relative;
+      width: 100%;
+      &>img {
+        display: block;
+        width: 100%;
+      }
+      &>span {
+        position: absolute;
+        top: 105rem/@size;
+        right: 110rem/@size;
+        width: 250rem/@size;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -webkit-animation-name:move_hudie;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function:ease;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: none;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      // 蝴蝶
+      @keyframes move_hudie {
+        0% {
+            transform: translateY(0);
+            transform-origin:50% 0;
+        }
+        50% {
+          transform: translateY(-50rem/@size);
+          transform-origin:50% 0;
+        }
+        100% {
+          transform: translateY(0rem/@size);
+          transform-origin:50% 0;
+        }
+      }
+      &>a {
+        position: absolute;
+        &:nth-of-type(1) {
+          top: 65rem/@size;
+          left: 250rem/@size;
+          width: 30rem/@size;
+          -webkit-transition-property: -webkit-transform;
+          -moz-transition-property: -moz-transform;
+          -webkit-animation-name:move_yanhua;
+          -webkit-animation-duration: 2s;
+          -webkit-animation-timing-function:ease;
+          -webkit-animation-delay: 0s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-fill-mode: none;
+        }
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      &>div {
+        width: 120rem/@size;
+        position: absolute;
+        top: 5rem/@size;
+        
+        &>div {
+          width: 100%;
+          position: relative;
+          &:nth-of-type(1) {
+            animation-duration: 4s !important;
+            animation-iteration-count:infinite;
+            -webkit-animation-name: move_wave !important;
+            animation-name: move_wave !important;
+          }
+          &:nth-of-type(2) {
+            animation-duration: 4s !important;
+            animation-iteration-count:infinite;
+            -webkit-animation-name: move_wave !important;
+            animation-name: move_wave !important;
+          }
+          i {
+            position: absolute;
+            top: 70rem/@size;
+            left: 0;
+            z-index: 1;
+          }
+          b {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+          }
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+        // 对联飘动
+        @keyframes move_wave {
+            0% {
+                transform: translateX(0) translateZ(0) scaleY(1);
+                transform-origin:50% 0;
+            }
+            50% {
+                transform: translateX(0%) translateZ(0) scaleY(0.9);
+                transform-origin:50% 0;
+            }
+            100% {
+                transform: translateX(0%) translateZ(0) scaleY(1);
+                transform-origin:50% 0;
+            }
+        }
+      }
+      .box-dui-img-life {
+        left: -10rem/@size;
+      }
+      .box-dui-img-right {
+        right: -10rem/@size;
+      }
+    }
+  }
+  .box-back {
+    width: 100%;
+    &.fu {
+      margin-top: 319rem/@size;
+      a {
+        position: absolute;
+        &:nth-of-type(1) {
+          top: -35rem/@size;
+          left: 160rem/@size;
+          width: 50rem/@size;
+          -webkit-transition-property: -webkit-transform;
+          -moz-transition-property: -moz-transform;
+          -webkit-animation-name:move_yanhua;
+          -webkit-animation-duration: 3s;
+          -webkit-animation-timing-function:ease;
+          -webkit-animation-delay: 0s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-fill-mode: none;
+        }
+        &:nth-of-type(2) {
+          top: 20rem/@size;
+          right: 160rem/@size;
+          width: 30rem/@size;
+          -webkit-transition-property: -webkit-transform;
+          -moz-transition-property: -moz-transform;
+          -webkit-animation-name:move_yanhua;
+          -webkit-animation-duration: 3s;
+          -webkit-animation-timing-function:ease;
+          -webkit-animation-delay: 1s;
+          -webkit-animation-iteration-count: infinite;
+          -webkit-animation-fill-mode: none;
+        }
+      }
+      i {
+        position: absolute;
+        width: 230rem/@size;
+        z-index: 1;
+        // border: 1px solid ;
+        img {
+          display: block;
+          width: 100%;
+          opacity: 0;
+        }
+        &:nth-of-type(1) {
+          top: 180rem/@size;
+          left: 105rem/@size;
+        }
+        &:nth-of-type(2) {
+          top: 180rem/@size;
+          right: 105rem/@size;
+        }
+        &:nth-of-type(3) {
+          bottom: 160rem/@size;
+          left: 105rem/@size;
+        }
+        &:nth-of-type(4) {
+          bottom: 160rem/@size;
+          right: 105rem/@size;
+        }
+      }
+    }
+    // 按钮
+    @keyframes move_button {
+      0% {
+          transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    &.shu {
+      p {
+        width: 280rem/@size;
+        bottom: 300rem/@size;
+      }
+    }
+    &>div {
+      margin-top: -2rem/@size;
+      width: 100%;
+      position: relative;
+      img {
+        display: block;
+        width: 100%;
+      }
+      p {
+        width: 180rem/@size;
+        position: absolute;
+        bottom: 60rem/@size;
+        left: 0;
+        right: 0;
+        margin: auto;
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -webkit-animation-name: move_button;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function:ease;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: none;
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .box-see-max {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    width: 750rem/@size;
+    background: rgba(0, 0, 0, 0);
+    z-index: 11;
+    &.active {
+      background: rgba(0, 0, 0, 0.8);
+      transition: all .2s;
+      i {
+        width: 90%;
+        transition: all .5s;
+      }
+    }
+    i {
+      display: block;
+      width: 20%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+}
