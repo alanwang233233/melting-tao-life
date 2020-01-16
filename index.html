@@ -9,8 +9,18 @@
   <link rel="stylesheet" href="./css/index.css">
   <script src="./js/flexible.js"></script>
   <script src="./js/jquery.min.js"></script>
+  <script src="./js/pinchzoom.js"></script>
 </head>
 <body>
+  <!-- 音頻 -->
+  <audio
+      style="display: none;"
+      id="musicAudio"
+      controls="controls"
+      autoplay="autoplay"
+  >
+      <source src="./image/kaichang.mp3"/>
+  </audio>
   <div class="box" id="box">
     <!-- 头部 -->
     <div class="box-top"><img src="./image/top.png" alt=""></div>
@@ -43,10 +53,10 @@
         <a href="javascript:;"><img src="./image/yanhua.png" alt=""></a>
         <a href="javascript:;"><img src="./image/yanhua.png" alt=""></a>
         <img src="./image/back_03_02.jpg" alt="">
-        <i class="box-back-fu-item"><img src="./image/4.png" alt=""></i>
-        <i class="box-back-fu-item"><img src="./image/3.png" alt=""></i>
-        <i class="box-back-fu-item"><img src="./image/2.png" alt=""></i>
-        <i class="box-back-fu-item"><img src="./image/1.png" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/1.jpg" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/2.jpg" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/3.jpg" alt=""></i>
+        <i class="box-back-fu-item"><img src="./image/4.jpg" alt=""></i>
         <p><img src="./image/see_loading.png" alt=""></p>
       </div>
     </div>
@@ -114,7 +124,48 @@
       `)
       setTimeout(function() {
         $('#box-see-max').addClass('active')
+        setTimeout(function() {
+          $('#box-see-max i img').each(function () {
+            new RTP.PinchZoom($(this), {});
+          });
+        },500)
       },100)
     })
+    // 音频播放
+    function musicPlay() {
+        document.getElementsByTagName('audio')[0].play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            document.getElementsByTagName('audio')[0].play();
+            document.getElementsByTagName('audio')[0].play();
+        }, false);
+    }
+    musicPlay();
+    setTimeout(function() {
+        musicPlay();
+        const _audio = document.getElementById('musicAudio');
+        if (typeof WeixinJSBridge == "object" && typeof WeixinJSBridge.invoke == "function") {
+            _audio.play();
+        } else {
+            if (document.addEventListener) {
+                document.addEventListener("WeixinJSBridgeReady", function() {
+                    _audio.play();
+                }, false);
+            } else if (document.attachEvent) {
+                document.attachEvent("WeixinJSBridgeReady", function() {
+                    _audio.play();
+                });
+                document.attachEvent("onWeixinJSBridgeReady", function() {
+                    _audio.play();
+                });
+            }
+        }
+        var isPlay = true;
+        document.addEventListener("touchstart", function(e) {
+            if (isPlay) {
+                _audio.play();
+                isPlay = false;
+            }
+        }, false);
+    },500)
   }
 </script>
