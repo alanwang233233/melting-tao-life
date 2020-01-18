@@ -60,7 +60,7 @@
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   -webkit-animation-name: move_hudie;
-  -webkit-animation-duration: 5s;
+  -webkit-animation-duration: 3s;
   -webkit-animation-timing-function: ease;
   -webkit-animation-delay: 0s;
   -webkit-animation-iteration-count: infinite;
@@ -76,7 +76,7 @@
     transform-origin: 50% 0;
   }
   50% {
-    transform: translateY(-0.66666667rem);
+    transform: translateY(-0.33333333rem);
     transform-origin: 50% 0;
   }
   100% {
